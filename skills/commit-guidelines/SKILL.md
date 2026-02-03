@@ -5,48 +5,48 @@ description: Generates structured commit messages based on 'git diff --staged', 
 
 # Skill: Git Auto-Commit Analyst
 
-## 1. Doel
+## 1. Objective
 
-Het genereren van een gestructureerde commit message op basis van de inhoud van `git diff --staged`. De focus ligt op technische nauwkeurigheid, beknoptheid en het automatisch toewijzen van een changelog-categorie.
+Generate a structured commit message based on the contents of `git diff --staged`. The focus is on technical accuracy, conciseness, and automatic assignment of a changelog category.
 
-## 2. Formaat Richtlijnen
+## 2. Formatting Guidelines
 
-Elke output moet strikt voldoen aan deze opbouw:
+Every output must strictly adhere to this structure:
 
-- **Subject Line:** Maximaal 50 tekens, gebiedende wijs (bijv. "Fix", "Add", "Update"), begint met een hoofdletter.
-- **Description:** Eén witregel na de subject line. Beschrijf de context (waarom is dit gedaan?) in plaats van de letterlijke code-wijziging.
-- **Trailer:** Eindig direct na de beschrijving met de juiste `Changelog: <type>` tag.
+- **Subject Line:** Maximum 50 characters, imperative mood (e.g., "Fix", "Add", "Update"), starting with a capital letter.
+- **Description:** One blank line after the subject line. Describe the context (**why** was this done?) rather than the literal code change.
+- **Trailer:** End immediately after the description with the appropriate `Changelog: <type>` tag.
 
-## 3. Classificatie Logica
+## 3. Classification Logic
 
-Analyseer de staged files en bepaal het type op basis van de volgende definities:
+Analyze the staged files and determine the type based on the following definitions:
 
-| Type             | Wanneer te gebruiken                                                  |
-| :--------------- | :-------------------------------------------------------------------- |
-| **added**        | Nieuwe functionaliteiten, nieuwe componenten of nieuwe bestanden.     |
-| **fixed**        | Bugfixes, oplossen van crashes, of correcties van foutieve logica.    |
-| **changed**      | Wijzigingen aan bestaande features die geen nieuwe functie toevoegen. |
-| **deprecated**   | Markeren van code die in toekomstige versies verwijderd zal worden.   |
-| **removed**      | Verwijderen van oude features of ongebruikte code.                    |
-| **security**     | Dichten van beveiligingslekken of updates aan authenticatie.          |
-| **performance**  | Optimalisaties die de snelheid of geheugengebruik verbeteren.         |
-| **dependencies** | Dependency updates.                                                   |
-| **other**        | Refactoring, documentatie, of wijzigingen in build-scripts.           |
-
----
-
-## 4. Instructie voor Generatie
-
-Wanneer de `git diff` of een lijst met wijzigingen wordt aangeleverd:
-
-1. Scan de wijzigingen op kernfunctionaliteit.
-2. Schrijf de subject line en beschrijving.
-3. Selecteer het meest relevante changelog type.
-4. **Output uitsluitend de commit message zelf**, zonder extra uitleg of Markdown code-blocks (tenzij anders gevraagd).
+| Type             | Use Case                                                        |
+| :--------------- | :-------------------------------------------------------------- |
+| **added**        | New features, new components, or new files.                     |
+| **fixed**        | Bug fixes, crash resolutions, or logic corrections.             |
+| **changed**      | Changes to existing features that do not add new functionality. |
+| **deprecated**   | Marking code to be removed in future versions.                  |
+| **removed**      | Removal of old features or unused code.                         |
+| **security**     | Vulnerability patches or authentication updates.                |
+| **performance**  | Optimizations improving speed or memory usage.                  |
+| **dependencies** | Dependency updates.                                             |
+| **other**        | Refactoring, documentation, or build script changes.            |
 
 ---
 
-## 5. Voorbeeld Output
+## 4. Generation Instructions
+
+When provided with a `git diff` or a list of changes:
+
+1.  Scan the changes for core functionality.
+2.  Draft the subject line and description.
+3.  Select the most relevant changelog type.
+4.  **Output only the commit message itself**, without extra explanation or Markdown code blocks (unless explicitly requested).
+
+---
+
+## 5. Example Output
 
 Update user authentication timeout
 
